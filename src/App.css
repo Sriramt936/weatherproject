@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #00c9ff, #92fe9d);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 350px;
+}
+
+
+.input-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  border: 2px solid hsl(0, 74%, 65%);
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.cityInput {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  height: 40px;
+  outline: none;
+}
+
+.searchIcon {
+  padding: 10px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon img {
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+}
+
+.image{
+ text-align: center;
+ height: 150px;
+ margin-bottom: 10px;
+
+}
+.image img{
+  height: 160%;
+  width: 160px;
+}
+
+.temp,.location,.country
+{
+
+margin-top: 5px;
+font-size: 35px;
+text-transform: uppercase;
+text-align: center;
+
+
+
+}
+
+.temp{
+  font-weight: 500;
+}
+
+.location{
+  color:#ffbc00;
+  font-weight: 400;
+  font-size: 40px;
+}
+
+.country{
+  text-align: center;
+  margin-top: 5px;
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: 500;
+  color:#888;
+}
+
+.cord{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.cord div{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-content: center;
+padding: 10px;
+}
+
+.cord div span{
+  font-size: 14px;
+
+}
+.humidity-percent,
+.wind-speed,
+.cord div span :nth-child(2){
+  font-size: 18px;
+  font-weight: bold;
+  color:#666;
+  padding-top: 5px;
+
+}
+
+.data-container{
+ display: flex;
+ justify-content: space-between;
+ 
+ margin-top: 20px;
+ 
+
+
+}
+
+.element
+{
+  text-align: center;
+
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+
+.text{
+  font-size: 12px;
+  color:#888;
+}
+
+.copyright{
+  text-align: center;
+  font-size: 20px;
+  color:linear-gradient(90deg, #00c9ff, #92fe9d);
+  margin-top: 20px;
+}
+
+.copyright span{
+  color:rgb(5, 70, 127)
+}
+.image {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.image img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for icon changes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Weather-specific animations */
+.image img:hover {
+  transform: rotate(5deg) scale(1.1);
+}
+
+/* For sunny weather */
+.image:has(img[src*="01d"]):hover img {
+  filter: drop-shadow(0 0 15px rgba(255, 200, 0, 0.6));
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .image img {
+    width: 80px;
+    height: 80px;
+  }
+}
